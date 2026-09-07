@@ -5,14 +5,16 @@
   Your browser does not support the video tag.
 </video>
 
+**[▶️ Watch on GitHub Pages](https://melzein1.github.io/game-of-life-processing/)**
+
 This repository contains a Processing IDE sketch (Pondlife) that simulates an evolving ecosystem with "herbivores" and "predators", nutrient fields, scent diffusion, and interactive controls.
 
-How to run
+## How to run
 - Install Processing (https://processing.org/) and open this repository folder in the Processing IDE.
 - Open the file: Game_of_life_processing_V2.pde
 - Press the ▶ run button.
 
-Controls
+## Controls
 - LEFT: paint nutrients (adds food)
 - RIGHT or SHIFT+LEFT: shockwave / repel
 - G: toggle overlays
@@ -23,8 +25,8 @@ Controls
 - 2: spawn predators at mouse
 - C: clear all agents & fields
 
-Files
+## Files
 - Game_of_life_processing_V2.pde — main sketch
 
-License
+## License
 - MIT
