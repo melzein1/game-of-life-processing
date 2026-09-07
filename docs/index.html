@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Life Preview - Pondlife Simulator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+            margin-bottom: 30px;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .description {
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .description h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .description p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .controls {
+            background: #f5f7ff;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+
+        .controls h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            font-size: 0.95em;
+        }
+
+        .control-item {
+            display: flex;
+            gap: 10px;
+        }
+
+        .control-key {
+            font-weight: 600;
+            color: #667eea;
+            min-width: 80px;
+        }
+
+        .footer {
+            background: #f9fafb;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e5e7eb;
+            color: #666;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            .controls-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌍 Pondlife Simulator</h1>
+            <p>Game of Life / Ecosystem Evolution Preview</p>
+        </div>
+
+        <div class="content">
+            <div class="video-wrapper">
+                <video controls loop muted>
+                    <source src="https://raw.githubusercontent.com/melzein1/game-of-life-processing/main/Game_of_Life_preview.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="description">
+                <h2>About</h2>
+                <p>
+                    This is a Processing IDE sketch that simulates an evolving ecosystem with "herbivores" and "predators", 
+                    nutrient fields, scent diffusion, and interactive controls. Watch as the ecosystem evolves and adapts in real-time!
+                </p>
+            </div>
+
+            <div class="controls">
+                <h3>Interactive Controls</h3>
+                <div class="controls-grid">
+                    <div class="control-item">
+                        <span class="control-key">LEFT Click</span>
+                        <span>Paint nutrients (adds food)</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">RIGHT Click</span>
+                        <span>Shockwave / repel</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">SHIFT + LEFT</span>
+                        <span>Shockwave / repel</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">G</span>
+                        <span>Toggle overlays</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">F</span>
+                        <span>Toggle animated flow</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">X</span>
+                        <span>Toggle fullscreen</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">E</span>
+                        <span>Toggle evolution (splitting)</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">1</span>
+                        <span>Spawn herbivores at mouse</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">2</span>
+                        <span>Spawn predators at mouse</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">C</span>
+                        <span>Clear all agents & fields</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="description">
+                <h2>Get Started</h2>
+                <p>
+                    Want to run this yourself? Install <a href="https://processing.org/" style="color: #667eea; text-decoration: underline;">Processing</a> 
+                    and open the <code style="background: #f5f7ff; padding: 2px 6px; border-radius: 3px;">Game_of_life_processing_V2.pde</code> file from the repository!
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>
+                <a href="https://github.com/melzein1/game-of-life-processing">View on GitHub</a> • 
+                MIT License
+            </p>
+        </div>
+    </div>
+</body>
+</html>
