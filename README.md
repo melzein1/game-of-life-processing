@@ -1,5 +1,10 @@
 # Pondlife (Game of Life / Ecosystem) — Processing sketch
 
+<video controls loop muted width="640">
+  <source src="https://raw.githubusercontent.com/melzein1/game-of-life-processing/main/Game_of_Life_preview.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 This repository contains a Processing IDE sketch (Pondlife) that simulates an evolving ecosystem with "herbivores" and "predators", nutrient fields, scent diffusion, and interactive controls.
 
 How to run
