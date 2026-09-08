@@ -5,6 +5,8 @@
   Your browser does not support the video tag.
 </video>
 
+![Pondlife Ecosystem Simulation](https://raw.githubusercontent.com/melzein1/game-of-life-processing/main/screenshot.png)
+
 **[▶️ Watch on GitHub Pages](https://melzein1.github.io/game-of-life-processing/)**
 
 This repository contains a Processing IDE sketch (Pondlife) that simulates an evolving ecosystem with "herbivores" and "predators", nutrient fields, scent diffusion, and interactive controls.
