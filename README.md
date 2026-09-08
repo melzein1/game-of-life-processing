@@ -5,7 +5,7 @@
   Your browser does not support the video tag.
 </video>
 
-![Pondlife Ecosystem Simulation](https://raw.githubusercontent.com/melzein1/game-of-life-processing/main/screenshot.png)
+![Pondlife Ecosystem Simulation](https://raw.githubusercontent.com/melzein1/game-of-life-processing/main/game_of_life.png)
 
 **[▶️ Watch on GitHub Pages](https://melzein1.github.io/game-of-life-processing/)**
 
